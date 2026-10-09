@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/francisworks-favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0a84ff">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dashboard | FrancisWorks</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="module" src="/assets/dashboard.js"></script>
+  </head>
+  <body>
+    <main class="dashboard-page">
+      <div class="dashboard-shell">
+        <section class="dashboard-auth" id="dashboard-auth-panel" aria-labelledby="dashboard-auth-title">
+          <h1 id="dashboard-auth-title">Inquiry desk</h1>
+          <p>Sign in with your approved email to view project messages.</p>
+          <form class="dashboard-login-form" id="dashboard-login-form">
+            <label for="dashboard-email">Email address</label>
+            <input id="dashboard-email" name="email" type="email" autocomplete="email" required>
+            <button class="btn-primary" type="submit">Send sign-in link</button>
+          </form>
+          <p class="dashboard-status" id="dashboard-auth-status" role="status"></p>
+        </section>
+
+        <section class="dashboard-app" id="dashboard-app" hidden>
+          <header class="dashboard-header">
+            <div>
+              <h1>Inquiries</h1>
+            </div>
+            <div class="dashboard-header-actions">
+              <span id="dashboard-user" class="dashboard-user"></span>
+              <button class="btn-secondary" id="dashboard-signout" type="button">Sign out</button>
+            </div>
+          </header>
+
+          <div class="dashboard-board">
+            <aside class="dashboard-list-panel" aria-label="Inquiry list">
+              <div class="dashboard-list-heading">
+                <h2>Messages</h2>
+                <button class="dashboard-refresh" id="dashboard-refresh" type="button">Refresh</button>
+              </div>
+              <div class="dashboard-list" id="dashboard-list"></div>
+            </aside>
+            <article class="dashboard-detail" id="dashboard-detail" aria-live="polite">
+              <div class="dashboard-empty">
+                <p class="dashboard-kicker">Select a message</p>
+                <h2>Nothing opened yet.</h2>
+                <p>Choose an inquiry to read its details and attachments.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
